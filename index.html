@@ -1,44 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>QuickPoll</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>QuickPoll</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="wrap">
-    <h1>QuickPoll</h1>
-    <p class="sub">Create a poll, vote, and watch the results update live.</p>
+<div class="wrap">
+  <h1>QuickPoll</h1>
+  <p class="sub">Create a poll, vote, and watch the results update live.</p>
 
-    <!-- Simulated voters -->
-    <div class="sim">
-      <button id="auto">▶ Auto-simulate other voters</button>
-      <button id="burst">+10 simulated votes</button>
+  <div class="sim">
+    <button id="auto">▶ Auto-simulate other voters</button>
+    <button id="burst">+10 simulated votes</button>
+  </div>
+  <div class="log" id="log" aria-live="polite"></div>
+
+  <div class="card">
+    <h2>Create a new poll</h2>
+    <label for="q">Question</label>
+    <input type="text" id="q" maxlength="140" placeholder="What’s your favorite programming language?">
+    <label>Options</label>
+    <div id="opts"></div>
+    <p class="err" id="err"></p>
+    <div class="actions">
+      <button id="addOpt">+ Add option</button>
+      <button class="primary" id="create">Create poll</button>
     </div>
-    <div class="log" id="log" aria-live="polite"></div>
-
-    <!-- Create a poll -->
-    <div class="card">
-      <h2>Create a new poll</h2>
-      <label for="q">Question</label>
-      <input type="text" id="q" maxlength="140" placeholder="What’s your favorite programming language?">
-
-      <label>Options</label>
-      <div id="opts"></div>
-      <p class="err" id="err"></p>
-
-      <div class="actions">
-        <button id="addOpt">+ Add option</button>
-        <button class="primary" id="create">Create poll</button>
-      </div>
-    </div>
-
-    <!-- Filled in by script.js -->
-    <div id="polls"></div>
-    <div id="charts"></div>
   </div>
 
-  <script src="script.js"></script>
+  <div id="polls"></div>
+  <div id="charts"></div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
